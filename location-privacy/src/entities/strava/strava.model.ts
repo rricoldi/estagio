@@ -18,4 +18,8 @@ export class Strava {
   @JoinColumn()
   @OneToOne(() => User, (user) => user.stravaInfo)
   user: IUser;
+
+  constructor(data: Partial<Strava>) {
+    Object.assign(this, data);
+  }
 }

@@ -27,4 +27,8 @@ export class User {
 
   @OneToMany(() => Location, (location) => location.user)
   locations: Location[];
+
+  constructor(data: Partial<User>) {
+    Object.assign(this, data);
+  }
 }

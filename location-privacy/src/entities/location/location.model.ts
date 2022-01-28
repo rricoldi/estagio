@@ -14,4 +14,8 @@ export class Location {
 
   @ManyToOne(() => User, (user) => user.locations)
   user: IUser;
+
+  constructor(data: Partial<Location>) {
+    Object.assign(this, data);
+  }
 }
